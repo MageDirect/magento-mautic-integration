@@ -1,0 +1,18 @@
+<script type="text/javascript">
+  //<![CDATA[
+  function exportCustomers() {
+    new Ajax.Request('<?php echo $this->getAjaxCheckUrl() ?>', {
+      method:     'get',
+      onSuccess: function(transport){
+        if (transport.responseJSON.success){
+            alert('Contacts has been exported successfully');
+        } else {
+            alert('Something went wrong');
+        }
+      }
+    });
+  }
+  //]]>
+</script>
+
+<?php echo $this->getButtonHtml() ?>

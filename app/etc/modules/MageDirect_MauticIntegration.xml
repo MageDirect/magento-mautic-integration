@@ -1,0 +1,8 @@
+<config>
+    <modules>
+        <MageDirect_MauticIntegration>
+            <active>true</active>
+            <codePool>community</codePool>
+        </MageDirect_MauticIntegration>
+    </modules>
+</config>

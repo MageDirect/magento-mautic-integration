@@ -1,0 +1,148 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <magedirect>
+            <label>MageDirect</label>
+            <sort_order>101</sort_order>
+        </magedirect>
+    </tabs>
+
+    <sections>
+        <mdmautic translate="label" module="mdmautic">
+            <label>Mautic Integration</label>
+            <tab>magedirect</tab>
+            <sort_order>2110</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <general translate="label">
+                    <label>General</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <expanded>1</expanded>
+                    <fields>
+                        <enable translate="label">
+                            <label>Enable Extension</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enable>
+                        <oauth_version translate="label">
+                            <label>OAuth Version</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>mdmautic/config_source_oauthVersion</source_model>
+                            <sort_order>15</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </oauth_version>
+                        <client_id translate="label comment">
+                            <label>Client ID</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <depends>
+                                <oauth_version separator=",">OAuth1a,OAuth2</oauth_version>
+                            </depends>
+                        </client_id>
+                        <client_secret translate="label comment">
+                            <label>Client Secret</label>
+                            <frontend_type>obscure</frontend_type>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <depends>
+                                <oauth_version separator=",">OAuth1a,OAuth2</oauth_version>
+                            </depends>
+                        </client_secret>
+                        <mautic_login translate="label comment">
+                            <label>Login</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <depends>
+                                <oauth_version>BasicAuth</oauth_version>
+                            </depends>
+                        </mautic_login>
+                        <mautic_password translate="label comment">
+                            <label>Password</label>
+                            <frontend_type>obscure</frontend_type>
+                            <backend_model>adminhtml/system_config_backend_encrypted</backend_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <depends>
+                                <oauth_version>BasicAuth</oauth_version>
+                            </depends>
+                        </mautic_password>
+                        <mautic_url translate="label comment">
+                            <label>Mautic Url</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </mautic_url>
+                        <authorize translate="label">
+                            <label>Authorize</label>
+                            <comment>Authorize Mautic API. Please save config before click this button.</comment>
+                            <frontend_type>button</frontend_type>
+                            <frontend_model>mdmautic/adminhtml_system_config_form_authorizeButton</frontend_model>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <depends>
+                                <oauth_version separator=",">OAuth1a,OAuth2</oauth_version>
+                            </depends>
+                        </authorize>
+                    </fields>
+                </general>
+                <contact translate="label">
+                    <label>Contacts Integration</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>20</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <expanded>1</expanded>
+                    <fields>
+                        <enable translate="label">
+                            <label>Enable</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enable>
+
+                        <run translate="label">
+                            <label>Export</label>
+                            <comment>Export contacts from Magento to your Mautic</comment>
+                            <frontend_type>button</frontend_type>
+                            <frontend_model>mdmautic/adminhtml_system_config_form_button</frontend_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </run>
+                    </fields>
+                </contact>
+            </groups>
+        </mdmautic>
+    </sections>
+</config>
