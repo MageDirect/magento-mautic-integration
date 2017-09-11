@@ -4,7 +4,7 @@ This integration synchronizes your customers between Magento and Mautic.
 In this way, you load your customers’ data from the Magento database into the web application – Mautic and perform any needed operations,
 that are available in Mautic, over this data.
 
-# About the extension.
+# About the extension
 
 At the moment, the module allows you to join Magento by API and send customer data. 
 This module consists from simple settings, where you can specify your Mautic url, and API credentials. 
