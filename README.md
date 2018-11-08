@@ -1,3 +1,6 @@
+We do not support this extension anymore. 
+If you need to add any new feature please contact our customer service: hello@magedirect.co
+
 # Magento + Mautic Integration
 
 This integration synchronizes your customers between Magento and Mautic. 
